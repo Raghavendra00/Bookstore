@@ -7,7 +7,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(189, 34, 34);
+    background-color: #e6f5ff; 
 }
 li  {
     display: block;
@@ -18,3 +18,9 @@ li  {
     float: left;
 }
 
+.bigblue {
+    color: DodgerBlue;
+    padding: 40px;
+    font-family: Arial;
+    text-align: center;
+}

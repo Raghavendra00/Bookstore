@@ -7,7 +7,6 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 const cors = require("cors");
 
-
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -16,10 +15,6 @@ app.get("/", (req, res) => {
   res.send("<h1>Welcome to node</h1>");
 });
 
-// app.get("/getData", async (req, res) => {
-//   const result = await user.find();
-//   res.json({ result });
-// });
 app.get("/afterlogin", (res, req) => {
   res.send("<h1>Welcome in my page</h1>");
 });
@@ -37,11 +32,11 @@ app.post("/savedata", async (req, res) => {
 
   const result = await user(data).save();
   // console.log(result);
-    if (result) {
-      return res.json({ code: 1});
-    } else {
-      return res.json({ code: -1 });
-    }
+  if (result) {
+    return res.json({ code: 1 });
+  } else {
+    return res.json({ code: -1 });
+  }
 });
 
 app.post("/getdata", async (req, res) => {
@@ -58,28 +53,25 @@ app.post("/getdata", async (req, res) => {
     // console.log(isValid)
 
     if (isValid == true) {
-      return res.json({code : 1})
+      return res.json({ code: 1 });
     } else {
-      return res.json({code:-1})
+      return res.json({ code: -1 });
     }
-  }
-  else {
+  } else {
     return res.json({ code: -2 });
   }
 });
 
-
-app.post('/search', async (req, res) => {
+app.post("/search", async (req, res) => {
   // console.log(req.body)
-  const result = await user.find({ firstname: req.body.name })
+  const result = await user.find({ firstname: req.body.name });
   // console.log(result)
   if (result.length > 0) {
-    return res.json({info:result[0],code:1})
+    return res.json({ info: result[0], code: 1 });
+  } else {
+    return res.json({ code: -1 });
   }
-  else {
-    return res.json({code:-1})
-  }
-})
+});
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -92,4 +84,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-  

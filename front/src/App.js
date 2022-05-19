@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
           <Route path="/output/:name" element={<Output />} />
-          <Route path="/booklist" element={<Booklist />} />
+          <Route path="/booklist" element={<Booklist  />} />
         </Routes>
       </Router>
     </>

@@ -83,7 +83,7 @@ const Login = ({ handleClose }) => {
           <Button variant="contained" onClick={handleClose}>
             Cancel
           </Button>
-          <Button type="submit" variant="contained" color="primary">
+           <Button type="submit" variant="contained" color="primary">
             Login
           </Button>
         </div>
